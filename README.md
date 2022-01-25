@@ -3,17 +3,12 @@
 ## Windows
 
 ### Compile Code
-* ./mvnw.cmd clean compile -e
-
 ### Test Code
-* ./mvnw.cmd clean test -e
-
 ### Jar Code
-* ./mvnw.cmd clean package -e
+* ./gradlew.bat clean build
 
 ### Run Jar
-* Local:      ./mvnw.cmd spring-boot:run 
-* Background: nohup bash mvnw.cmd spring-boot:run &
+* Local:      ./gradlew.bat bootRun
 
 ### Testing Application
 * Abrir navegador: http://localhost:8082/rest/mscovid/test?msg=testing
@@ -21,17 +16,12 @@
 ## Linux
 
 ### Compile Code
-* ./mvnw clean compile -e
-
 ### Test Code
-* ./mvnw clean test -e
-
 ### Jar Code
-* ./mvnw clean package -e
+* ./gradlew clean build
 
 ### Run Jar
-* Local:      ./mvnw spring-boot:run 
-* Background: nohup bash mvnw spring-boot:run &
+* Local:      ./gradlew bootRun
 
 ### Testing Application
 * curl -X GET 'http://localhost:8082/rest/mscovid/test?msg=testing'
@@ -41,28 +31,20 @@
 ## Docker in Windows
 ```bash
 ### Compile Code
-docker run -it --rm -v ${pwd}:/code --workdir /code maven mvn clean compile -e
-
 ### Test Code
-docker run -it --rm -v ${pwd}:/code --workdir /code maven mvn clean test -e
-
 ### Jar Code
-docker run -it --rm -v ${pwd}:/code --workdir /code maven mvn clean package -e
+docker run -it --rm -v ${pwd}:/code --workdir /code gradle gradle clean build
 
 ### Run Jar
-docker run -it --rm -p 8082:8082  -v ${pwd}:/code --workdir /code maven mvn spring-boot:run
+docker run -it --rm -p 8082:8082  -v ${pwd}:/code --workdir /code gradle gradle bootRun
 ```
 ## Docker in Linux
 ```bash
 ### Compile Code
-docker run -it --rm -v $(pwd):/code --workdir /code maven mvn clean compile -e
-
 ### Test Code
-docker run -it --rm -v $(pwd):/code --workdir /code maven mvn clean test -e
-
 ### Jar Code
-docker run -it --rm -v $(pwd):/code --workdir /code maven mvn clean package -e
+docker run -it --rm -v $(pwd):/code --workdir /code gradle gradle clean build
 
 ### Run Jar
-docker run -it --rm -p 8082:8082  -v $(pwd):/code --workdir /code maven mvn spring-boot:run
+docker run -it --rm -p 8082:8082  -v $(pwd):/code --workdir /code gradle gradle bootRun
 ```
