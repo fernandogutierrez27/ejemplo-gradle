@@ -26,7 +26,8 @@ pipeline {
                 withSonarQubeEnv('SonarQubeUsach') {
                     sh "echo 'SonarQube Analysis!'"
                     // Run Maven on a Unix agent.
-                    sh 'gradle clean verify sonar:sonar -Dsonar.projectKey=test-alive'
+                    // sh 'gradle clean verify sonar:sonar -Dsonar.projectKey=test-alive'
+                    sh 'sonarqube -Dsonar.projectKey=test-alive -Dsonar.java.binaries=build'
                 }
             }
         }
