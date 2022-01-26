@@ -24,7 +24,7 @@ pipeline {
             withSonarQubeEnv('SonarQubeUsach') {
                 sh "echo 'SonarQube Analysis!'"
                 // Run Maven on a Unix agent.
-                sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=test-alive'
+                sh 'gradle clean verify sonar:sonar -Dsonar.projectKey=test-alive'
             }
         }
         stage("Paso 3: Curl Springboot Gradle sleep 20"){
