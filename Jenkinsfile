@@ -48,7 +48,7 @@ pipeline {
                             [
                                 classifier: '',
                                 extension: '',
-                                filePath: 'build/DevOpsUsach2022-0.0.0.jar']
+                                filePath: 'libs/DevOpsUsach2022-0.0.0.jar']
                             ],
                         mavenCoordinate: [
                             artifactId: 'DevOpsUsach2022',
