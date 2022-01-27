@@ -3,10 +3,6 @@ def jsonParse(def json) {
     new groovy.json.JsonSlurperClassic().parseText(json)
 }
 
-plugins {
-  id "org.sonarqube" version "3.3"
-}
-
 pipeline {
     agent any
 
@@ -31,8 +27,7 @@ pipeline {
                 withSonarQubeEnv('SonarQubeUsach') {
                     sh "echo 'SonarQube Analysis!'"
                     // Run Maven on a Unix agent.
-                    // sh 'gradle clean verify sonar:sonar -Dsonar.projectKey=test-alive'
-                    sh 'sonarqube -Dsonar.projectKey=test-alive -Dsonar.java.binaries=build'
+                    sh 'gradle sonarqube -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build'
                 }
             }
         }

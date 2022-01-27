@@ -11,7 +11,7 @@
 	<groupId>com.devopsusach2022</groupId>
 	<artifactId>DevOpsUsach2022</artifactId>
 	<version>0.0.0</version>
-	<name>github-sonar</name>
+	<name>ejemplo-gradle</name>
 	<description>Proyecto de ejemplo para el desarrollo del diplomado DevOps Universidad de Santiago de Chile 2020</description>
 
 	<properties>
